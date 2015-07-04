@@ -3,7 +3,7 @@ set -e
 source /tmp/build/buildconfig
 set -x
 
-sed -i 's/^\(deb.*\)http:\/\/archive\.ubuntu\.com\(.*\)$/\1http:\/\/ubuntu.stu.edu.tw\2/g'
+sed -i 's/^\(deb.*\)http:\/\/archive\.ubuntu\.com\(.*\)$/\1http:\/\/ubuntu.stu.edu.tw\2/g' /etc/apt/sources.list
 apt-get update
 apt-get dist-upgrade -y
 apt-get autoremove -y
