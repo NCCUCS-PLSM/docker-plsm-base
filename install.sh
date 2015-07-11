@@ -3,7 +3,16 @@ set -e
 source /tmp/build/buildconfig
 set -x
 
-sed -i 's/^\(deb.*\)http:\/\/archive\.ubuntu\.com\(.*\)$/\1http:\/\/ubuntu.stu.edu.tw\2/g' /etc/apt/sources.list
+#sed -i 's/^\(deb.*\)http:\/\/archive\.ubuntu\.com\(.*\)$/\1http:\/\/ubuntu.stu.edu.tw\2/g' /etc/apt/sources.list
+echo "deb http://tw.archive.ubuntu.com/ubuntu/ wily main restricted universe multiverse" > /etc/apt/sources.list
+echo "deb-src http://tw.archive.ubuntu.com/ubuntu/ wily main restricted universe multiverse" >> /etc/apt/sources.list
+echo "deb http://tw.archive.ubuntu.com/ubuntu/ wily-updates main restricted universe multiverse" >> /etc/apt/sources.list
+echo "deb-src http://tw.archive.ubuntu.com/ubuntu/ wily-updates main restricted universe multiverse" >> /etc/apt/sources.list
+echo "deb http://tw.archive.ubuntu.com/ubuntu/ wily-security main restricted universe multiverse" >> /etc/apt/sources.list
+echo "deb-src http://tw.archive.ubuntu.com/ubuntu/ wily-security main restricted universe multiverse" >> /etc/apt/sources.list
+echo "deb http://tw.archive.ubuntu.com/ubuntu/ trusty-backports main restricted universe multiverse" >> /etc/apt/sources.list
+echo "deb-src http://tw.archive.ubuntu.com/ubuntu/ trusty-backports main restricted universe multiverse" >> /etc/apt/sources.list
+echo 'Acquire::http { Proxy "http://www.plsm.cs.nccu.edu.tw:3142"; }; } }' > /etc/apt/apt.conf.d/01aptproxy
 apt-get update
 apt-get dist-upgrade -y
 apt-get autoremove -y
