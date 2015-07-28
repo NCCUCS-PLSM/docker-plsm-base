@@ -15,6 +15,14 @@ echo "deb-src http://tw.archive.ubuntu.com/ubuntu/ trusty-backports main restric
 echo 'Acquire::http { Proxy "http://www.plsm.cs.nccu.edu.tw:3142"; }; } }' > /etc/apt/apt.conf.d/01aptproxy
 apt-get update
 apt-get dist-upgrade -y
+
+$minimal_apt_get_install libaio1
+dpkg -i /tmp/build/oci/*.deb
+mv /tmp/build/oci/oracle.conf /etc/ld.so.conf.d
+ldconfig
+mv /tmp/build/oci/oracle.sh /etc/profile.d
+ln -s /usr/include/oracle/12.1/client64 /usr/lib/oracle/12.1/client64/include
+
 apt-get autoremove -y
 workaround-pam build
 
