@@ -1,4 +1,4 @@
-FROM atkinschang/docker-baseimage:base
+FROM atkinschang/docker-baseimage:latest
 
 MAINTAINER Atkins Chang "atkinschang@icloud.com"
 
