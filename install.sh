@@ -12,7 +12,7 @@ echo "deb http://tw.archive.ubuntu.com/ubuntu/ wily-security main restricted uni
 echo "deb-src http://tw.archive.ubuntu.com/ubuntu/ wily-security main restricted universe multiverse" >> /etc/apt/sources.list
 echo "deb http://tw.archive.ubuntu.com/ubuntu/ trusty-backports main restricted universe multiverse" >> /etc/apt/sources.list
 echo "deb-src http://tw.archive.ubuntu.com/ubuntu/ trusty-backports main restricted universe multiverse" >> /etc/apt/sources.list
-echo 'Acquire::http { Proxy "http://apt.plsm.cs.nccu.edu.tw:3142"; }; } }' > /etc/apt/apt.conf.d/01aptproxy
+echo 'Acquire::http::Proxy "http://apt.plsm.cs.nccu.edu.tw:3142";' > /etc/apt/apt.conf.d/01aptproxy
 apt-get update
 apt-get dist-upgrade -y
 apt-get autoremove -y
