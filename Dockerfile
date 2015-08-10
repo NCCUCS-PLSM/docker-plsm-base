@@ -1,4 +1,4 @@
-FROM atkinschang/docker-baseimage:latest
+FROM nccucsplsm/baseimage:latest
 
 MAINTAINER Atkins Chang "atkinschang@icloud.com"
 
