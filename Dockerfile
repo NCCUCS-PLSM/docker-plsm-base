@@ -1,4 +1,4 @@
-FROM atkinschang/docker-baseimage:latest-jdk8
+FROM nccucsplsm/baseimage:jdk8-latest
 
 MAINTAINER Atkins Chang "atkinschang@icloud.com"
 
