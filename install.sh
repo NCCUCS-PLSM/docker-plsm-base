@@ -16,7 +16,7 @@ echo 'Acquire::http::Proxy "http://apt.plsm.cs.nccu.edu.tw:3142";' > /etc/apt/ap
 apt-get update
 apt-get dist-upgrade -y
 echo "Asia/Taipei" > /etc/timezone
-cp /usr/share/zoneinfo/Asia/Taipei /etc/localtime
+dpkg-reconfigure tzdata
 apt-get autoremove -y
 workaround-pam build
 
