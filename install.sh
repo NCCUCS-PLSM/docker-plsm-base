@@ -16,7 +16,7 @@ echo 'Acquire::http::Proxy "http://apt.plsm.cs.nccu.edu.tw:3142";' > /etc/apt/ap
 apt-get update
 apt-get dist-upgrade -y
 echo "Asia/Taipei" > /etc/timezone
-cp /usr/share/zoneinfo/Asia/Taipei /etc/localtime
+dpkg-reconfigure tzdata
 
 $minimal_apt_get_install libaio1
 dpkg -i /tmp/build/oci/*.deb
