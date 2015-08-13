@@ -15,6 +15,8 @@ echo "deb-src http://tw.archive.ubuntu.com/ubuntu/ trusty-backports main restric
 echo 'Acquire::http::Proxy "http://apt.plsm.cs.nccu.edu.tw:3142";' > /etc/apt/apt.conf.d/01aptproxy
 apt-get update
 apt-get dist-upgrade -y
+echo "Asia/Taipei" > /etc/timezone
+cp /usr/share/zoneinfo/Asia/Taipei /etc/localtime
 apt-get autoremove -y
 workaround-pam build
 
